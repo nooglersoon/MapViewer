@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "codablegeojson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/guykogus/CodableGeoJSON.git",
+      "state" : {
+        "revision" : "8d7dcaab6dd81f5ed87c34517dd9f6afab5cb3d4",
+        "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "codablejson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/guykogus/CodableJSON.git",
+      "state" : {
+        "revision" : "38e20396043c711b060c1542ea6d1b357c58f849",
+        "version" : "3.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

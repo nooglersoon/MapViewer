@@ -11,6 +11,8 @@
 		E6318CDC2B1F23E40075DFD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CDB2B1F23E40075DFD1 /* ContentView.swift */; };
 		E6318CDE2B1F23E50075DFD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6318CDD2B1F23E50075DFD1 /* Assets.xcassets */; };
 		E6318CE12B1F23E50075DFD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6318CE02B1F23E50075DFD1 /* Preview Assets.xcassets */; };
+		E6318CEA2B2027C30075DFD1 /* CodableGeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E6318CE92B2027C30075DFD1 /* CodableGeoJSON */; };
+		E6318CEC2B2028640075DFD1 /* EmptyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CEB2B2028640075DFD1 /* EmptyProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		E6318CDD2B1F23E50075DFD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6318CE02B1F23E50075DFD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6318CE22B1F23E50075DFD1 /* Map_Viewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Map_Viewer.entitlements; sourceTree = "<group>"; };
+		E6318CEB2B2028640075DFD1 /* EmptyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6318CEA2B2027C30075DFD1 /* CodableGeoJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +61,7 @@
 				E6318CDD2B1F23E50075DFD1 /* Assets.xcassets */,
 				E6318CE22B1F23E50075DFD1 /* Map_Viewer.entitlements */,
 				E6318CDF2B1F23E50075DFD1 /* Preview Content */,
+				E6318CEB2B2028640075DFD1 /* EmptyProperties.swift */,
 			);
 			path = "Map Viewer";
 			sourceTree = "<group>";
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = "Map Viewer";
+			packageProductDependencies = (
+				E6318CE92B2027C30075DFD1 /* CodableGeoJSON */,
+			);
 			productName = "Map Viewer";
 			productReference = E6318CD62B1F23E40075DFD1 /* Map Viewer.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +121,9 @@
 				Base,
 			);
 			mainGroup = E6318CCD2B1F23E30075DFD1;
+			packageReferences = (
+				E6318CE82B2027C30075DFD1 /* XCRemoteSwiftPackageReference "CodableGeoJSON" */,
+			);
 			productRefGroup = E6318CD72B1F23E40075DFD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6318CEC2B2028640075DFD1 /* EmptyProperties.swift in Sources */,
 				E6318CDC2B1F23E40075DFD1 /* ContentView.swift in Sources */,
 				E6318CDA2B1F23E40075DFD1 /* Map_ViewerApp.swift in Sources */,
 			);
@@ -341,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E6318CE82B2027C30075DFD1 /* XCRemoteSwiftPackageReference "CodableGeoJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/guykogus/CodableGeoJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6318CE92B2027C30075DFD1 /* CodableGeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6318CE82B2027C30075DFD1 /* XCRemoteSwiftPackageReference "CodableGeoJSON" */;
+			productName = CodableGeoJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6318CCE2B1F23E30075DFD1 /* Project object */;
 }
