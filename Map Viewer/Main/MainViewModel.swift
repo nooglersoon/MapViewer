@@ -51,7 +51,7 @@ class MainViewModel: ObservableObject {
             print("DBG \(coordinates)")
             break
         case .polygon(let coordinates):
-            print("DBG \(coordinates)")
+            self.dataSources.append(.polygon(coordinates: coordinates))
             break
         case .multiPolygon(let coordinates):
             print("DBG \(coordinates)")

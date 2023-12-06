@@ -5,10 +5,10 @@ import MapKit
 import CodableGeoJSON
 
 struct MVMapView: NSViewRepresentable {
-    @Binding var coordinates: [GeoJSON.Geometry]
+    @Binding var dataSources: [GeoJSON.Geometry]
     
     init(coordinates: Binding<[GeoJSON.Geometry]>) {
-        self._coordinates = coordinates
+        self._dataSources = coordinates
     }
     
     func makeNSView(context: Context) -> MKMapView {
@@ -27,25 +27,35 @@ struct MVMapView: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: MKMapView, context: Context) {
-        if !coordinates.isEmpty {
-            coordinates.forEach { geom in
+        if !dataSources.isEmpty {
+            dataSources.forEach { geom in
                 switch geom {
-                case .point(let coordinate):
-                    let region = MKCoordinateRegion(center: .init(latitude: coordinate.latitude, longitude: coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                case .point(let dataSource):
+                    let region = MKCoordinateRegion(center: .init(latitude: dataSource.latitude, longitude: dataSource.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
                     nsView.setRegion(region, animated: false)
-                    let circle = MKCircle(center: .init(latitude: coordinate.latitude, longitude: coordinate.longitude), radius: 50)
+                    let circle = MKCircle(center: .init(latitude: dataSource.latitude, longitude: dataSource.longitude), radius: 50)
                     nsView.addOverlay(circle)
                 case .multiPoint(let coordinates):
                     break
-                case .lineString(let coordinates):
-                    let region = MKCoordinateRegion(center: .init(latitude: coordinates[0].latitude, longitude: coordinates[0].longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                case .lineString(let dataSources):
+                    let region = MKCoordinateRegion(center: .init(latitude: dataSources[0].latitude, longitude: dataSources[0].longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
                     nsView.setRegion(region, animated: false)
-                    let polyline = MKPolyline(coordinates: coordinates.compactMap({.init(latitude: $0.latitude, longitude: $0.longitude)}), count: coordinates.count)
+                    let polyline = MKPolyline(coordinates: dataSources.compactMap({.init(latitude: $0.latitude, longitude: $0.longitude)}), count: dataSources.count)
                     nsView.addOverlay(polyline)
                 case .multiLineString(let coordinates):
                     break
-                case .polygon(let coordinates):
-                    break
+                case .polygon(let dataSources):
+                    let region = MKCoordinateRegion(center: .init(latitude: dataSources[0][0].latitude, longitude: dataSources[0][0].longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                    nsView.setRegion(region, animated: false)
+                    
+                    dataSources.forEach { singleDataSource in
+                        let coordinates: [CLLocationCoordinate2D] = singleDataSource.map { position in
+                                .init(latitude: position.latitude, longitude: position.longitude)
+                        }
+                        let polygon = MKPolygon(coordinates: coordinates, count: coordinates.count)
+                        nsView.addOverlay(polygon)
+                    }
+                    
                 case .multiPolygon(let coordinates):
                     break
                 case .geometryCollection(let geometries):
