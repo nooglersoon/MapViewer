@@ -12,7 +12,9 @@
 		E6318CDE2B1F23E50075DFD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6318CDD2B1F23E50075DFD1 /* Assets.xcassets */; };
 		E6318CE12B1F23E50075DFD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6318CE02B1F23E50075DFD1 /* Preview Assets.xcassets */; };
 		E6318CEA2B2027C30075DFD1 /* CodableGeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E6318CE92B2027C30075DFD1 /* CodableGeoJSON */; };
-		E6318CEC2B2028640075DFD1 /* EmptyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CEB2B2028640075DFD1 /* EmptyProperties.swift */; };
+		E6318CF02B2052180075DFD1 /* MVMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CEF2B2052180075DFD1 /* MVMapView.swift */; };
+		E6318CF22B2052E90075DFD1 /* MVMapView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF12B2052E90075DFD1 /* MVMapView+Coordinator.swift */; };
+		E6318CF42B20532D0075DFD1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF32B20532D0075DFD1 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +24,9 @@
 		E6318CDD2B1F23E50075DFD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6318CE02B1F23E50075DFD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6318CE22B1F23E50075DFD1 /* Map_Viewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Map_Viewer.entitlements; sourceTree = "<group>"; };
-		E6318CEB2B2028640075DFD1 /* EmptyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProperties.swift; sourceTree = "<group>"; };
+		E6318CEF2B2052180075DFD1 /* MVMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVMapView.swift; sourceTree = "<group>"; };
+		E6318CF12B2052E90075DFD1 /* MVMapView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MVMapView+Coordinator.swift"; sourceTree = "<group>"; };
+		E6318CF32B20532D0075DFD1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +60,13 @@
 		E6318CD82B1F23E40075DFD1 /* Map Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				E6318CEE2B20519C0075DFD1 /* Main */,
+				E6318CED2B2051970075DFD1 /* Views */,
 				E6318CD92B1F23E40075DFD1 /* Map_ViewerApp.swift */,
 				E6318CDB2B1F23E40075DFD1 /* ContentView.swift */,
 				E6318CDD2B1F23E50075DFD1 /* Assets.xcassets */,
 				E6318CE22B1F23E50075DFD1 /* Map_Viewer.entitlements */,
 				E6318CDF2B1F23E50075DFD1 /* Preview Content */,
-				E6318CEB2B2028640075DFD1 /* EmptyProperties.swift */,
 			);
 			path = "Map Viewer";
 			sourceTree = "<group>";
@@ -72,6 +77,23 @@
 				E6318CE02B1F23E50075DFD1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E6318CED2B2051970075DFD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6318CEF2B2052180075DFD1 /* MVMapView.swift */,
+				E6318CF12B2052E90075DFD1 /* MVMapView+Coordinator.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E6318CEE2B20519C0075DFD1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E6318CF32B20532D0075DFD1 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6318CEC2B2028640075DFD1 /* EmptyProperties.swift in Sources */,
 				E6318CDC2B1F23E40075DFD1 /* ContentView.swift in Sources */,
+				E6318CF22B2052E90075DFD1 /* MVMapView+Coordinator.swift in Sources */,
 				E6318CDA2B1F23E40075DFD1 /* Map_ViewerApp.swift in Sources */,
+				E6318CF42B20532D0075DFD1 /* MainView.swift in Sources */,
+				E6318CF02B2052180075DFD1 /* MVMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
