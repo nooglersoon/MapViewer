@@ -22,6 +22,7 @@ struct MVMapView: NSViewRepresentable {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: centerCoordinate, span: span)
         mapView.region = region
+        mapView.pointOfInterestFilter = .excludingAll
         
         return mapView
     }
