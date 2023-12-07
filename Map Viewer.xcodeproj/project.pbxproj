@@ -16,6 +16,7 @@
 		E6318CF22B2052E90075DFD1 /* MVMapView+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF12B2052E90075DFD1 /* MVMapView+Coordinator.swift */; };
 		E6318CF42B20532D0075DFD1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF32B20532D0075DFD1 /* MainView.swift */; };
 		E6318CF62B2053C00075DFD1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF52B2053C00075DFD1 /* MainViewModel.swift */; };
+		E6318CF82B2169E00075DFD1 /* MVActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF72B2169E00075DFD1 /* MVActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E6318CF12B2052E90075DFD1 /* MVMapView+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MVMapView+Coordinator.swift"; sourceTree = "<group>"; };
 		E6318CF32B20532D0075DFD1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E6318CF52B2053C00075DFD1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E6318CF72B2169E00075DFD1 /* MVActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				E6318CEF2B2052180075DFD1 /* MVMapView.swift */,
 				E6318CF12B2052E90075DFD1 /* MVMapView+Coordinator.swift */,
+				E6318CF72B2169E00075DFD1 /* MVActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6318CF82B2169E00075DFD1 /* MVActionButton.swift in Sources */,
 				E6318CDC2B1F23E40075DFD1 /* ContentView.swift in Sources */,
 				E6318CF22B2052E90075DFD1 /* MVMapView+Coordinator.swift in Sources */,
 				E6318CDA2B1F23E40075DFD1 /* Map_ViewerApp.swift in Sources */,
