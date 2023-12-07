@@ -1,10 +1,22 @@
 import Foundation
 import CodableGeoJSON
 
+enum AlertState {
+    case success(label: String)
+    case error(title: String, subtitle: String?)
+    case hidden
+}
+
 class MainViewModel: ObservableObject {
 
     @Published
     var dataSources: [GeoJSON.Geometry] = []
+    
+    @Published
+    var alertState: AlertState = .hidden
+    
+    @Published
+    var showToast: Bool = false
 
     func handleImportResult(_ result: Result<[URL], Error>) {
         do {
@@ -27,8 +39,6 @@ class MainViewModel: ObservableObject {
                 }
             }
         } catch {
-            // Handle failure.
-            print(error)
             DispatchQueue.main.async { [weak self] in
                 self?.handleError(error)
             }
@@ -45,8 +55,9 @@ class MainViewModel: ObservableObject {
                     self?.handleGeometry(geoJSON)
                 }
             } catch {
-                // Handle decoding error
-                self?.handleError(error)
+                DispatchQueue.main.async { [weak self] in
+                    self?.handleError(error)
+                }
             }
         }
     }
@@ -62,6 +73,7 @@ class MainViewModel: ObservableObject {
         case .geometry(let geometry, _):
             handleGeometry(geometry)
         }
+        handleSuccess(label: "Success import the data")
     }
 
     func handleGeometry(_ geometry: GeoJSON.Geometry?) {
@@ -96,11 +108,17 @@ class MainViewModel: ObservableObject {
 
 
     func handleError(_ error: Error) {
-        // Handle error, e.g., display an alert or log
-        print("Error: \(error)")
+        showToast.toggle()
+        alertState = .error(title: "Failed to import data", subtitle: "Your data is not supported at the moment")
+    }
+    
+    func handleSuccess(label: String) {
+        showToast.toggle()
+        alertState = .success(label: label)
     }
     
     func resetLayers() {
+        handleSuccess(label: "Success remove data")
         dataSources.removeAll()
     }
 }

@@ -1,5 +1,6 @@
 import SwiftUI
 import CodableGeoJSON
+import AlertToast
 
 struct MainView: View {
     
@@ -31,6 +32,16 @@ struct MainView: View {
             allowsMultipleSelection: false
         ) { result in
             viewModel.handleImportResult(result)
+        }
+        .toast(isPresenting: $viewModel.showToast){
+            switch viewModel.alertState {
+            case .success(let label):
+                return AlertToast(displayMode: .hud, type: .regular, title: label)
+            case .error(let title, let subtitle):
+                return AlertToast(displayMode: .hud, type: .error(.red), title: title, subTitle: subtitle)
+            case .hidden:
+                return AlertToast(displayMode: .alert, type: .regular)
+            }
         }
     }
 }

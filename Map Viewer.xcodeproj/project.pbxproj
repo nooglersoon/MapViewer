@@ -17,6 +17,7 @@
 		E6318CF42B20532D0075DFD1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF32B20532D0075DFD1 /* MainView.swift */; };
 		E6318CF62B2053C00075DFD1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF52B2053C00075DFD1 /* MainViewModel.swift */; };
 		E6318CF82B2169E00075DFD1 /* MVActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6318CF72B2169E00075DFD1 /* MVActionButton.swift */; };
+		E6318CFB2B21710A0075DFD1 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = E6318CFA2B21710A0075DFD1 /* AlertToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6318CEA2B2027C30075DFD1 /* CodableGeoJSON in Frameworks */,
+				E6318CFB2B21710A0075DFD1 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +122,7 @@
 			name = "Map Viewer";
 			packageProductDependencies = (
 				E6318CE92B2027C30075DFD1 /* CodableGeoJSON */,
+				E6318CFA2B21710A0075DFD1 /* AlertToast */,
 			);
 			productName = "Map Viewer";
 			productReference = E6318CD62B1F23E40075DFD1 /* Map Viewer.app */;
@@ -151,6 +154,7 @@
 			mainGroup = E6318CCD2B1F23E30075DFD1;
 			packageReferences = (
 				E6318CE82B2027C30075DFD1 /* XCRemoteSwiftPackageReference "CodableGeoJSON" */,
+				E6318CF92B21710A0075DFD1 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = E6318CD72B1F23E40075DFD1 /* Products */;
 			projectDirPath = "";
@@ -397,6 +401,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		E6318CF92B21710A0075DFD1 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -404,6 +416,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E6318CE82B2027C30075DFD1 /* XCRemoteSwiftPackageReference "CodableGeoJSON" */;
 			productName = CodableGeoJSON;
+		};
+		E6318CFA2B21710A0075DFD1 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6318CF92B21710A0075DFD1 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
