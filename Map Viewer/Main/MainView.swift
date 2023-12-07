@@ -39,8 +39,6 @@ struct MainView: View {
                 return AlertToast(displayMode: .hud, type: .regular, title: label)
             case .error(let title, let subtitle):
                 return AlertToast(displayMode: .hud, type: .error(.red), title: title, subTitle: subtitle)
-            case .hidden:
-                return AlertToast(displayMode: .alert, type: .regular)
             }
         }
     }

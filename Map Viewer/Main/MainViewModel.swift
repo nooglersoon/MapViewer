@@ -4,7 +4,6 @@ import CodableGeoJSON
 enum AlertState {
     case success(label: String)
     case error(title: String, subtitle: String?)
-    case hidden
 }
 
 class MainViewModel: ObservableObject {
@@ -13,7 +12,7 @@ class MainViewModel: ObservableObject {
     var dataSources: [GeoJSON.Geometry] = []
     
     @Published
-    var alertState: AlertState = .hidden
+    var alertState: AlertState = .success(label: "")
     
     @Published
     var showToast: Bool = false
