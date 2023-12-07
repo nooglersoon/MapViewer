@@ -18,10 +18,7 @@ class MainViewModel: ObservableObject {
                 do {
                     let restoredData = try Data(contentsOf: selectedFileURL)
 
-                    // Perform JSON decoding on the main thread
-                    DispatchQueue.main.async { [weak self] in
-                        self?.handleDecodedData(restoredData)
-                    }
+                    self?.handleDecodedData(restoredData)
                 } catch {
                     // Handle file read error
                     DispatchQueue.main.async { [weak self] in
