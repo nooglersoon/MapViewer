@@ -11,8 +11,11 @@ struct MainView: View {
             MVMapView(coordinates: $viewModel.dataSources)
             VStack(spacing: 16) {
                 MVActionButton(
-                    model: .init(callback: {print("")}, buttonColor: .red, textColor: .white, icon: Image(systemName: "minus.circle.fill"), text: "Reset layer")
+                    model: .init(callback: {
+                        viewModel.resetLayers()
+                    }, buttonColor: .red, textColor: .white, icon: Image(systemName: "minus.circle.fill"), text: "Reset layer")
                 )
+                .disabled(viewModel.dataSources.isEmpty)
                 MVActionButton(
                     model: .init(callback: {
                         isImporting.toggle()

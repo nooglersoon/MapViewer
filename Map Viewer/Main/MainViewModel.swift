@@ -99,4 +99,8 @@ class MainViewModel: ObservableObject {
         // Handle error, e.g., display an alert or log
         print("Error: \(error)")
     }
+    
+    func resetLayers() {
+        dataSources.removeAll()
+    }
 }

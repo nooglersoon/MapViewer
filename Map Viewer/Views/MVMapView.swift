@@ -62,6 +62,8 @@ struct MVMapView: NSViewRepresentable {
                     break
                 }
             }
+        } else {
+            nsView.removeOverlays(nsView.overlays)
         }
     }
     
